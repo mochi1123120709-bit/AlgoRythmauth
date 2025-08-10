@@ -84,16 +84,22 @@ body {
 
 .container h1 {
     font-size: 32px;
-    margin: -10px 0 10px 0;
+    margin: 0 0 16px 0;
     font-weight: 700;
-    color: #F59E0B;
+    background: linear-gradient(135deg, #F59E0B, #FBBF24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
 }
 
 .container p {
     font-size: 14px;
-    margin: 15px 0 30px 0;
-    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 32px 0;
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.6;
+    text-align: center;
+    font-weight: 400;
 }
 
 /* Auth Header */
@@ -103,8 +109,17 @@ body {
     left: 0;
     right: 0;
     z-index: 100;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem 1rem 1.5rem;
     text-align: center;
+    background: linear-gradient(180deg, rgba(10,10,15,0.9) 0%, transparent 100%);
+    backdrop-filter: blur(10px);
+}
+
+.auth-header h1 {
+    font-size: 28px;
+    margin: 8px 0 0 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 /* Form Boxes */
@@ -123,7 +138,7 @@ form {
     justify-content: center;
     color: white;
     text-align: center;
-    padding: 60px 40px 40px 40px;
+    padding: 80px 48px 48px 48px;
     z-index: 1;
     transition: .6s ease-in-out 1.2s, visibility 0s 1s;
 }
@@ -143,92 +158,100 @@ form {
 /* Input Styling */
 .input-box {
     position: relative;
-    margin: 20px 0;
+    margin: 16px 0;
     width: 100%;
 }
 
 .input-box input {
     width: 100%;
-    padding: 15px 50px 15px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px 52px 16px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
     outline: none;
     font-size: 16px;
     color: white;
-    font-weight: 400;
+    font-weight: 500;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    letter-spacing: 0.3px;
 }
 
 .input-box input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.55);
     font-weight: 400;
+    letter-spacing: 0.2px;
 }
 
 .input-box input:focus {
-    border-color: #F59E0B;
-    background: rgba(245, 158, 11, 0.1);
+    border-color: #FBBF24;
+    background: rgba(251, 191, 36, 0.12);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.2);
+    box-shadow: 0 12px 32px rgba(251, 191, 36, 0.25);
 }
 
 .input-box i {
     position: absolute;
-    right: 20px;
+    right: 18px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
 }
 
 .input-box input:focus + i {
-    color: #F59E0B;
+    color: #FBBF24;
     transform: translateY(-50%) scale(1.1);
 }
 
 /* Forgot Link */
 .forgot-link { 
-    margin: -10px 0 20px; 
+    margin: 8px 0 24px; 
     width: 100%;
     text-align: right;
 }
 
 .forgot-link a {
-    font-size: 14px;
-    color: #F59E0B;
+    font-size: 13px;
+    color: #FBBF24;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.2px;
 }
 
 .forgot-link a:hover {
-    color: #FBBF24;
+    color: #FCD34D;
+    text-decoration: underline;
 }
 
 /* Button Styling */
 .btn {
     width: 100%;
-    height: 48px;
-    background: linear-gradient(135deg, #F59E0B, #D97706);
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(245, 158, 11, 0.25);
+    height: 52px;
+    background: linear-gradient(135deg, #FBBF24, #F59E0B);
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(251, 191, 36, 0.3);
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     color: #0A0A0F;
-    font-weight: 600;
+    font-weight: 700;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    margin: 20px 0;
+    margin: 24px 0 20px 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
 .btn::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #FBBF24, #F59E0B);
+    background: linear-gradient(135deg, #FCD34D, #FBBF24);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -239,7 +262,7 @@ form {
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 48px rgba(245, 158, 11, 0.4);
+    box-shadow: 0 20px 60px rgba(251, 191, 36, 0.45);
 }
 
 /* Social Icons */
@@ -254,23 +277,24 @@ form {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 8px;
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 6px;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .social-icons a:hover {
-    border-color: #F59E0B;
-    color: #F59E0B;
+    border-color: #FBBF24;
+    color: #FBBF24;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.2);
+    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.25);
+    background: rgba(251, 191, 36, 0.1);
 }
 
 /* Toggle Box (Sliding Panel System) */
@@ -308,7 +332,16 @@ form {
     z-index: 2;
     transition: .6s ease-in-out;
     text-align: center;
-    padding: 40px;
+    padding: 48px;
+}
+
+.toggle-panel h1 {
+    font-size: 36px;
+    margin: 24px 0 16px 0;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.5px;
 }
 
 .toggle-panel.toggle-left {
@@ -332,46 +365,55 @@ form {
 }
 
 .toggle-panel p { 
-    margin-bottom: 30px;
+    margin-bottom: 32px;
     line-height: 1.6;
-    opacity: 0.9;
+    opacity: 0.95;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.2px;
 }
 
 .toggle-panel .btn {
-    width: 160px;
-    height: 46px;
+    width: 180px;
+    height: 50px;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.9);
     box-shadow: none;
     color: white;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    font-size: 13px;
 }
 
 .toggle-panel .btn:hover {
-    background: white;
-    color: #F59E0B;
+    background: rgba(255, 255, 255, 0.95);
+    color: #D97706;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25);
+    border-color: white;
 }
 
 /* Code Window Styling */
 .code-window {
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 8px;
-    margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    max-width: 300px;
+    max-width: 320px;
     width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .window-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .window-controls {
@@ -390,20 +432,23 @@ form {
 .control.green { background: #28ca42; }
 
 .window-title {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
     font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .window-content {
-    padding: 1rem;
+    padding: 16px;
 }
 
 .code-snippet {
     text-align: left;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    line-height: 1.6;
+    font-size: 11px;
+    line-height: 1.7;
+    font-weight: 400;
 }
 
 .code-keyword { color: #ff79c6; }
@@ -477,7 +522,7 @@ form {
         width: 100%;
         height: 70%;
         right: 0;
-        padding: 40px 20px 20px 20px;
+        padding: 60px 24px 24px 24px;
     }
     
     .container.active .form-box {
@@ -506,6 +551,17 @@ form {
     .toggle-panel {
         width: 100%;
         height: 30%;
+        padding: 32px 24px;
+    }
+    
+    .toggle-panel h1 {
+        font-size: 28px;
+        margin: 16px 0 12px 0;
+    }
+    
+    .toggle-panel p {
+        font-size: 14px;
+        margin-bottom: 24px;
     }
     
     .toggle-panel.toggle-left { 
@@ -522,21 +578,36 @@ form {
     }
     
     .auth-header {
-        padding: 1rem;
+        padding: 1.5rem 1rem 0.5rem 1rem;
+    }
+    
+    .auth-header h1 {
+        font-size: 24px;
     }
 }
 
 @media screen and (max-width: 400px) {
     .form-box { 
-        padding: 20px; 
+        padding: 40px 20px 20px 20px; 
     }
     
     .toggle-panel h1 {
-        font-size: 24px; 
+        font-size: 24px;
+        margin: 12px 0 8px 0;
+    }
+    
+    .toggle-panel p {
+        font-size: 13px;
+        margin-bottom: 20px;
     }
     
     .code-window {
-        max-width: 250px;
+        max-width: 280px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .auth-header h1 {
+        font-size: 22px;
     }
 }
 
@@ -553,28 +624,31 @@ form {
 }
 /* Signup/Signin prompt styling */
 .signup-prompt, .signin-prompt {
-    margin: 15px 0 20px 0;
+    margin: 20px 0 24px 0;
     text-align: center;
 }
 
 .signup-prompt p, .signin-prompt p {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
     margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.2px;
 }
 
 .signup-link, .signin-link {
-    color: #F59E0B !important;
-    font-weight: 600;
+    color: #FBBF24 !important;
+    font-weight: 700;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
     border-bottom: 1px solid transparent;
+    letter-spacing: 0.3px;
 }
 
 .signup-link:hover, .signin-link:hover {
-    color: #FBBF24 !important;
-    border-bottom-color: #FBBF24;
+    color: #FCD34D !important;
+    border-bottom-color: #FCD34D;
     transform: translateY(-1px);
 }
 
